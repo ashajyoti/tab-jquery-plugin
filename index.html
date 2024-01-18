@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tab Example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="reset.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:visited,
+        a:hover {
+            color: #000;
+        }
+
+        .tab-nav {
+            display: flex;
+        }
+
+        .tab-nav li {
+            margin: 0 0.5em;
+        }
+
+        .tab-nav li a {
+            display: block;
+            border: 1px solid #aaa;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            padding: 0.5em 1em;
+        }
+
+        .tab-nav li a:hover {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .tab-nav li a.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .switch-container {
+            padding-top: 10em;
+        }
+
+        .switch-container {
+            input[type=checkbox] {
+                height: 0;
+                width: 0;
+                visibility: hidden;
+            }
+
+            label {
+                cursor: pointer;
+                width: 80px;
+                height: 40px;
+                background: grey;
+                display: block;
+                border-radius: 100px;
+                position: relative;
+            }
+
+            label:after {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 30px;
+                height: 30px;
+                background: #fff;
+                border-radius: 90px;
+                transition: 0.3s;
+            }
+
+            input:checked+label {
+                background: #bada55;
+            }
+
+            input:checked+label:after {
+                left: calc(100% - 5px);
+                transform: translateX(-100%);
+            }
+
+            label:active:after {
+                width: 30px;
+            }
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <div class="tab-new">
+        <nav>
+            <ul class="tab-nav">
+                <li><a href="#tab-content-about" data-href="content/first-tab.txt">About</a></li>
+                <li><a href="#tab-content-details">Details</a></li>
+                <li><a href="#tab-content-gallery" data-href="wrtegehrth4y">Gallery</a></li>
+                <li><a href="#tab-content-contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="tab-content">
+            <section id="tab-content-about">
+            </section>
+            <section id="tab-content-details">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo reprehenderit, quidem, mollitia nisi
+                doloremque ullam in consequatur quisquam provident modi minima reiciendis laborum cum commodi!
+                Recusandae architecto voluptate nisi dolorem?
+            </section>
+            <section id="tab-content-gallery">
+                <img src="https://placehold.co/600x400" alt="">
+            </section>
+            <section id="tab-content-contact">
+                <address>
+                    Villa 190, APR Grandio,
+                    Patancheru,
+                    Hyderabad - 502319
+                </address>
+            </section>
+        </div>
+    </div>
+
+    <div class="switch-container">
+        <form action="">
+            <label for="first-switch"></label>
+            <input type="checkbox" id="first-switch" />
+            <input type="checkbox" id="second-switch" />
+            <label for="second-switch"></label>
+            <input type="checkbox" id="third-switch" />
+            <label for="third-switch"></label>
+            <input type="checkbox" id="fourth-switch" />
+            <label for="fourth-switch"></label>
+        </form>
+    </div>
+
+</body>
+
+</html>
